@@ -12,7 +12,7 @@
 // console.log(5);
 
 //! exception_2
-// finly
+// Finlay
 
 //!3 exception_3
 
