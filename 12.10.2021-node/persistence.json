@@ -1,4 +1,4 @@
 [
-  { "name": "blue sky", "discription": "romance book", "pages": 540 },
-  { "name": "berlin", "discription": "history", "pages": 140 }
+  { "name": "blue sky", "description": "romance book", "pages": 340 },
+  { "name": "berlin", "description": "history", "pages": 440 }
 ]
