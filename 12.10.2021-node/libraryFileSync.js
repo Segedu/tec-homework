@@ -7,6 +7,7 @@ const library = [
   { name: "c", author: "Adam", pages: 333 },
   { name: "d", author: "Adam", pages: 444 },
   { name: "e", author: "Adam", pages: 555 },
+  { name: "f", author: "Adam", pages: 666 },
 ];
 
 let handleFunc = process.argv[2];
@@ -14,10 +15,6 @@ let name = process.argv[3];
 let author = process.argv[4];
 let pages = Number(process.argv[5]);
 const book = { name, author, pages };
-name = process.argv[6];
-author = process.argv[7];
-pages = Number(process.argv[8]);
-const updatedBook = { name, author, pages };
 
 function oneOfCrudFunctions(funcName) {
   switch (funcName) {
@@ -25,7 +22,11 @@ function oneOfCrudFunctions(funcName) {
       addBook(library, book);
       break;
     case "update":
-      updateBook(book, updatedBook);
+      let name = process.argv[6];
+      let author = process.argv[7];
+      let pages = Number(process.argv[8]);
+      let updatedBook = { name, author, pages };
+      updateBook(updatedBook);
       break;
     case "delete":
       deleteBook(book);
@@ -34,7 +35,8 @@ function oneOfCrudFunctions(funcName) {
       getAll();
       break;
     case "search":
-      searchBook();
+      searchBook(book);
+      break;
     default:
       console.log("you didn't choose any action");
       break;
@@ -54,33 +56,50 @@ function addBook(library, newBook) {
   console.log(library);
 }
 
-function updateBook(existBook, newBook) {
+function updateBook(newBook) {
   for (let i = 0; i < library.length; i++) {
     let element = library[i];
-    if (existBook.name != element.name) {
-      console.log("Error at UPDATING. book doesn't exist");
-      return;
-    } else if (existBook.name === element.name) {
-      // console.log(element);
-      library.splice(element, 1);
-      element = newBook;
-      // console.log(element);
-      library.push(element);
+    let index = library.indexOf(element);
+    if (newBook.name !== element.name) {
+      console.log(`searching book ${newBook.name} to update`);
+    } else if (index > -1) {
+      library[index] = newBook;
       console.log(library);
       return;
     }
   }
+  console.log(`The book ${newBook.name} doesn't exist in the library`);
 }
 
 function deleteBook(existBook) {
   for (let i = 0; i < library.length; i++) {
     let element = library[i];
+    const index = library.indexOf(element);
     if (existBook.name !== element.name) {
-      console.log("can't find book to delete");
+      console.log(`searching book ${existBook.name} to delete`);
+    } else if (index > -1) {
+      library.splice(index, 1);
+      console.log(library);
       return;
     }
-
-    library.splice(existBook, 1);
-    console.log(library);
   }
+  console.log(`The book ${existBook.name} doesn't exist in the library`);
+}
+
+function searchBook(someBook) {
+  for (let i = 0; i < library.length; i++) {
+    const element = library[i];
+    const index = library.indexOf(element);
+    if (someBook.name !== element.name) {
+      console.log(`Searching the book ${someBook.name}`);
+    } else if (index > -1) {
+      console.log(someBook, `Book index in the library: ${index}`);
+      return;
+    }
+  }
+  console.log(`The book ${someBook.name} doesn't exist in the library`);
+}
+
+function getAll() {
+  console.log(library);
 }
