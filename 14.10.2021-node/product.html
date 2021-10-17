@@ -5,12 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>product.html</title>
+    <link rel="stylesheet" href="./style.css">
+
 </head>
 <body>
-    <h1>this is the product page</h1>       
+    <h1>The product page</h1>       
     <div id="productCont"></div>
-
-    <script src="./product.js"></script>
+    <script>
+        let data = [
+          {
+            name: "sofa",
+            price: 2600,
+            img: "https://images.pexels.com/photos/5490904/pexels-photo-5490904.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+          },
+        ];
+        
+        productCont.innerHTML += `<h1>${data[0].name}</h1><p>${data[0].price}</p><img src="${data[0].img}">`;
+    </script>
     <script src="./main.js"></script>
 </body>
 </html>

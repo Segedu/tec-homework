@@ -7,7 +7,6 @@ const server = http.createServer((req, res) => {
   try {
     switch (req.url) {
       case "/":
-        console.log("this is the index page request");
         fs.readFile("./index.html", "utf-8", (error, data) => {
           if (error) {
             throw "index.html file error";
@@ -23,7 +22,7 @@ const server = http.createServer((req, res) => {
           if (error) {
             throw "about.html file error";
           }
-          res.writeHead(200, { "content-type": "text/html" });
+          res.writeHead(200, { "Content-Type": "text/html" });
           res.write(data);
           res.end();
         });
@@ -33,7 +32,27 @@ const server = http.createServer((req, res) => {
           if (error) {
             throw "product.html file error";
           }
-          res.writeHead(200, { "content-type": "text/html" });
+          res.writeHead(200, { "Content-Type": "text/html" });
+          res.write(data);
+          res.end();
+        });
+        break;
+      case "/products":
+        fs.readFile("./products.html", "utf-8", (error, data) => {
+          if (error) {
+            throw "products.html file error";
+          }
+          res.writeHead(200, { "Content-Type": "text/html" });
+          res.write(data);
+          res.end();
+        });
+        break;
+      case "/sales":
+        fs.readFile("./sales.html", "utf-8", (error, data) => {
+          if (error) {
+            throw "sales.html file error";
+          }
+          res.writeHead(200, { "Content-Type": "text/html" });
           res.write(data);
           res.end();
         });
@@ -43,13 +62,13 @@ const server = http.createServer((req, res) => {
           if (error) {
             throw "css file error";
           }
-          res.writeHead(200, { "content-type": "text/css" });
+          res.writeHead(200, { "Content-Type": "text/css" });
           res.write(data);
           res.end();
         });
         break;
-
       default:
+        "There is an error";
         break;
     }
   } catch (error) {

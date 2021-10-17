@@ -5,9 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>products.html</title>
+    <link rel="stylesheet" href="./style.css">
+
 </head>
 <body>
-    <h1>this is the products page</h1>
+    <h1>The products page</h1>
+    <div id="productsCont"></div>
+
+    <script>
+           let data = [
+          {
+            name: "sofa",
+            price: 2600,
+            img: "https://images.pexels.com/photos/5490904/pexels-photo-5490904.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+          },
+          {
+            name: "arm chair",
+            price: 1300,
+            img: "https://images.pexels.com/photos/8286101/pexels-photo-8286101.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+          },
+          {
+            name: "table",
+            price: 2000,
+            img: "https://images.pexels.com/photos/2451264/pexels-photo-2451264.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+          },
+          {
+            name: "chair",
+            price: 400,
+            img: "https://images.pexels.com/photos/2258083/pexels-photo-2258083.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" 
+          },
+          {
+            name: "pillow",
+            price: 400,
+            img: "https://images.pexels.com/photos/8082240/pexels-photo-8082240.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+          },
+        ];
+        for (let i = 0; i < data.length; i++) {            
+            productsCont.innerHTML +=`<h1>${data[i].name}</h1>
+            <p>${data[i].price}</p>
+            <img src="${data[i].img}">`;
+        }
+    </script>
     <script src="./main.js"></script>
 </body>
 </html>

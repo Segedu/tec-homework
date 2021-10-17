@@ -1,6 +1,26 @@
-h1 {
-  color: red;
-}
 h2 {
-  color: green;
+  color: orange;
+}
+#productsCont {
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+  margin-left: 20%;
+  padding: 2%;
+}
+#productCont {
+  display: flex;
+  width: 60%;
+  margin-left: 20%;
+}
+h1 {
+  color: lightslategray;
+  /* display: flex; */
+}
+img {
+  border-radius: 10px 40px 10px 40px;
+  width: 250px;
+}
+p {
+  font-size: 32px;
 }
