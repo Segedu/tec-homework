@@ -23,6 +23,8 @@
 // app.listen(port);
 
 //!web_server_1.6
+// חזור על תרגיל web_server_1.5 אבל במקום לשכפל את התפריט בכל דף להשתמש ב handlebars.js , hbs
+// אתגר - לימוד עצמי (מופיע במצגת)
 
 //!web_server_1.7
 // const { response } = require("express");
