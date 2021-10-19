@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+h1 {
+  text-align: center;
+  color: darkgoldenrod;
+}
+a {
+  color: white;
+  text-decoration: none;
+  font-size: larger;
+  padding: 3%;
+}
