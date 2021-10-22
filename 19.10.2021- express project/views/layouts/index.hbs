@@ -1,41 +1,56 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
-</head>
-<body>
-<header>
-    <nav>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
         <a href="/">Home</a>
-        {{!-- <a href="/findLocation.hbs">Find location page</a> --}}
         <a href="/about.html">About Me</a>
         <a href="/help.html">Help</a>
-    </nav>
-</header>
- <main>
-    {{!-- <h1>Location</h1> --}}
-    <p>Hello There :)<br>
-        This app will help you easily find<br>
-        the exact location of 
-        any city </p>
-    <form action="/city" method="get">
-        <input type="text" placeholder="Enter city" name="city" id="input">
-        <input type="submit" value="send">
-    </form>
-</main>
-<footer>
-       <a class="navBrand" href="https://www.facebook.com/" target="blank"><img src="https://did.li/akTfT" alt= "facebook logo"></a>          
-        <a class="navBrand" href="https://www.whatsapp.com/?lang=en" target="blank"><img src="https://did.li/AvlTY"  alt= "whatsapp logo"></a>
-        <a class="navBrand" href="https://www.instagram.com/" target="blank"><img src="https://did.li/g4HNf"  alt= "instagram logo"></a>
-        <a class="navBrand" href="https://www.youtube.com/" target="blank"><img src="https://did.li/mMwlC" alt="youtube logo"></a>
-        <span>© 2021 Segedu Abe. All rights reserved</span>
-</footer>
-</body>
+      </nav>
+    </header>
+     <main>
+      <article id="homeCont">
+        <p>Hello There :)<br />
+          This app will help you easily find<br />
+          the exact location of any city
+        </p>
+        <form action="/city" method="get">
+          <input type="text" placeholder="Enter city" name="city" id="input" />
+          <input type="submit" value="send" />
+        </form>
+      </article>
+    </main>
+    <footer>
+      <a class="navBrand" href="https://www.facebook.com/" target="blank"><img
+          src="https://did.li/akTfT"
+          alt="facebook logo"
+        /></a>
+      <a
+        class="navBrand"
+        href="https://www.whatsapp.com/?lang=en"
+        target="blank"
+      ><img src="https://did.li/AvlTY" alt="whatsapp logo" /></a>
+      <a class="navBrand" href="https://www.instagram.com/" target="blank"><img
+          src="https://did.li/g4HNf"
+          alt="instagram logo"
+        /></a>
+      <a class="navBrand" href="https://www.youtube.com/" target="blank"><img
+          src="https://did.li/mMwlC"
+          alt="youtube logo"
+        /></a>
+      <span>© 2021 Segedu Abe. All rights reserved</span>
+    </footer>
+  </body>
 </html>

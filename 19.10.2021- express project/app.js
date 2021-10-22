@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const port = 8080;
-// const publicPath = path.join(__dirname, "public" "views", "layouts");
 const handlebars = require("express-handlebars");
 const { send } = require("process");
 let cities, lon, lat;
