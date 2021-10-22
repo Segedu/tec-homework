@@ -3,8 +3,7 @@ const app = express();
 const path = require("path");
 const port = 8080;
 const handlebars = require("express-handlebars");
-const { send } = require("process");
-let cities, lon, lat;
+let cities, name, lon, lat, temp, feelsLike;
 
 app.use(express.static("public"));
 app.set("view engine", "hbs");
@@ -30,16 +29,28 @@ app.get("/city", (req, res) => {
   return axios
     .get(url)
     .then(function (response) {
+      console.log(response.data);
       if (response.status === 200) {
         cities = JSON.stringify(req.query.city);
-        lon = JSON.stringify(response.data.coord.lon);
-        lat = JSON.stringify(response.data.coord.lat);
-        res.render("main", { layout: "findLocation", lon, lat });
+        name = response.data.name;
+        lon = response.data.coord.lon;
+        lat = response.data.coord.lat;
+        temp = Math.ceil(response.data.main.temp / 10);
+        feelsLike = Math.ceil(response.data.main.feels_like / 10);
+
+        res.render("main", {
+          layout: "findLocation",
+          lon,
+          lat,
+          temp,
+          feelsLike,
+          name,
+        });
       }
     })
     .catch(function (error) {
       res.sendFile(path.join(__dirname, "public", "error.html"));
-      console.log("i am in catch");
+      console.log("I am in catch");
       console.log("error");
     });
 });
@@ -49,4 +60,4 @@ app.get("*", (req, res) => {
 });
 
 app.listen(port);
-console.log(`app is running on port ${port}`);
+console.log(`app is listening on port: ${port}`);
