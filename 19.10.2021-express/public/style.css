@@ -1,12 +1,12 @@
 * {
   margin: 0;
   padding: 0;
-  background-color: black;
+  background-color: darkgray;
 }
 
 h1 {
   text-align: center;
-  color: darkgoldenrod;
+  color: black;
 }
 a {
   color: white;
