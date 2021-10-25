@@ -21,9 +21,9 @@ app.get("/findLocation.hbs", (req, res) => {
 });
 
 app.get("/city", (req, res) => {
-  const APIkey = "641974375fb31ab9962b7f26bce1a2a0";
+  const API_KEY = process.env.open_weather_api_key;
   const cityName = req.query.city;
-  const url = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIkey}`;
+  const url = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}`;
   const axios = require("axios");
 
   return axios
