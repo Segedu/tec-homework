@@ -1,9 +1,9 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-const port = 8080;
+const PORT = 8080;
 const handlebars = require("express-handlebars");
-let cities, name, lon, lat, temp, feelsLike;
+let city, name, lon, lat, temp, feelsLike;
 
 app.use(express.static("public"));
 app.set("view engine", "hbs");
@@ -22,7 +22,7 @@ app.get("/findLocation.hbs", (req, res) => {
 
 app.get("/city", (req, res) => {
   const APIkey = "641974375fb31ab9962b7f26bce1a2a0";
-  const cityName = `${req.query.city}`;
+  const cityName = req.query.city;
   const url = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIkey}`;
   const axios = require("axios");
 
@@ -31,7 +31,7 @@ app.get("/city", (req, res) => {
     .then(function (response) {
       console.log(response.data);
       if (response.status === 200) {
-        cities = JSON.stringify(req.query.city);
+        city = req.query.city;
         name = response.data.name;
         lon = response.data.coord.lon;
         lat = response.data.coord.lat;
@@ -50,8 +50,7 @@ app.get("/city", (req, res) => {
     })
     .catch(function (error) {
       res.sendFile(path.join(__dirname, "public", "error.html"));
-      console.log("I am in catch");
-      console.log("error");
+      console.log("error. you are in catch");
     });
 });
 
@@ -59,5 +58,5 @@ app.get("*", (req, res) => {
   res.send("sorry your page can't be reached!!");
 });
 
-app.listen(port);
-console.log(`app is listening on port: ${port}`);
+app.listen(PORT);
+console.log(`app is listening on port: ${PORT}`);
