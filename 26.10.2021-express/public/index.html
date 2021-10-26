@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <h1>hello</h1>
+      <form id="idForm">
+        <input
+          type="text"
+          name="name"
+          id="taskNameId"
+          placeholder="enter task"
+        />
+        <input type="submit" value="create task" />
+        <input type="text" name="search" id="searchInput" />
+        <button id="btnSearchById">search by id</button>
+        <input type="text" name="delete" id="deleteById" />
+        <button id="btnDelete">delete by id</button>
+      </form>
+      <button id="btn" onclick="getTasks()">get all tasks</button>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+      document.getElementById("idForm").addEventListener("submit", addTask);
+      document
+        .getElementById("btnSearchById")
+        .addEventListener("click", searchById);
+      document
+        .getElementById("btnDelete")
+        .addEventListener("click", deleteById);
+
+      function getTasks() {
+        axios
+          .get("/tasks")
+          .then(function (response) {
+            if (response.status == 200) {
+              const tasks = response.data;
+              console.log(tasks);
+            }
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+      }
+
+      function addTask(e) {
+        e.preventDefault();
+        const name = document.getElementById("taskNameId").value;
+        axios
+          .post("/tasks", {
+            name,
+          })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+      }
+
+      function searchById(e) {
+        e.preventDefault();
+        const search = document.getElementById("searchInput").value;
+        axios
+          .get(`/tasks/${search}`)
+          .then(function (response) {
+            if (response.status == 200) {
+              console.log(response.data);
+            }
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+      }
+
+      function deleteById(e) {
+        e.preventDefault();
+        const id = document.getElementById("deleteById").value;
+        axios
+          .get(`/tasks/${id}`)
+          .then(function (response) {
+            if (response.status == 200) {
+              //delete from array-not finished
+            }
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+      }
+    </script>
+  </body>
+</html>
