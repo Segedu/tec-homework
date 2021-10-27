@@ -11,7 +11,7 @@ let city, name, lon, lat, temp, feelsLike;
 
 app.use(express.static(publicPath));
 app.set("view engine", "hbs");
-app.set("views", viewsPath);
+app.engine("views", viewsPath);
 hbs.registerPartials(partialsPath);
 
 app.get("/", (req, res) => {
