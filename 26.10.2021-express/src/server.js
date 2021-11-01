@@ -1,20 +1,18 @@
 //!json_placeholder_1
-const { response } = require("express");
 const express = require("express"),
   path = require("path"),
   publicPath = path.join(__dirname, "..", "public"),
   app = express(),
   PORT = 8080,
-  axios = require("axios"),
   comments = [];
 
 app.use(express.json());
 
 app.use(express.static(publicPath));
 
-app.get("/", (req, res) => {
-  res.send("index.html");
-});
+// app.get("/", (req, res) => {
+//   res.send("index.html");
+// });
 
 app.get("/comments", (req, res) => {
   res.send(comments);

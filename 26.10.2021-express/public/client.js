@@ -70,6 +70,7 @@ function deleteById(e) {
       console.log("you are in the delete by ID catch");
     });
 }
+
 // function updateById(e) {
 //   e.preventDefault();
 //   let id = document.getElementById("updateById").value;
