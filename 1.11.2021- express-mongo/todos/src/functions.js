@@ -42,4 +42,56 @@ function insertDocument(res, todoObj, collecName) {
   });
 }
 
-module.exports = { getAllDocuments, insertDocument };
+function getDocById(req, res) {
+  const id = req.params.id;
+  MongoClient.connect(url, (err, db) => {
+    if (err) throw err;
+    const currentDB = db.db(dbName);
+    currentDB
+      .collection(collecName)
+      .findOne({ _id: mongoDB.ObjectId(id) }, (err, todo) => {
+        if (err) {
+          throw err;
+        }
+        res.send(todo);
+      });
+  });
+}
+
+function deleteDocById(req, res) {
+  const id = req.params.id;
+  MongoClient.connect(url, (err, db) => {
+    if (err) throw err;
+    const currentDB = db.db(dbName);
+    currentDB
+      .collection(collecName)
+      .findOneAndDelete({ _id: mongoDB.ObjectId(id) }, (err, doc) => {
+        if (err) {
+          throw err;
+        }
+        console.log(doc);
+        res.send(doc);
+      });
+  });
+}
+function updateDocById(req, res) {
+  const id = req.params.id;
+  MongoClient.connect(url, (err, db) => {
+    if (err) throw err;
+    const currentDB = db.db(dbName);
+    currentDB
+      .collection(collecName)
+      .findOneAndUpdate({ _id: mongoDB.ObjectId(id) }, (err, doc) => {
+        if (err) throw err;
+        res.send(doc);
+      });
+  });
+}
+
+module.exports = {
+  getAllDocuments,
+  insertDocument,
+  getDocById,
+  deleteDocById,
+  updateDocById,
+};

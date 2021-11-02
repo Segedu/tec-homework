@@ -1,6 +1,18 @@
 GET http://localhost:3000/todos
 
 ###
+
+GET http://localhost:3000/todos/61812c6f69d8577fe757b1a8
+
+###
+
+DELETE  http://localhost:3000/todos/61812c6f69d8577fe757b1a8
+
+###
+
+PATCH http://localhost:3000/todos/id
+
+###
 POST http://localhost:3000/todos
 Content-Type: application/json
 
