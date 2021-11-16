@@ -14,11 +14,11 @@ function sum(randomArr) {
 sum(numbersArray)
 
 
-const newArr = numbersArray.map(Math.sqrt)
+const newArr = numbersArray.map(Math.sqrt);
 console.log(newArr);
 sum(newArr)
 
-const arr = [10, 21, 36, 41, 50, 60, 72, 88, 91]
+const arr = [10, 21, 36, 41, 50, 60, 72, 88, 91];
 const getEvenNumbersArray = (array) => {
     return array.filter(element => element % 2 == 0);
 }
