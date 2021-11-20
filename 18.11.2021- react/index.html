@@ -11,18 +11,18 @@
     <script type="text/babel">
     const domElement= document.getElementById("app");
 
-    function HelloWorld(){
-        return <div>hello world</div>
-    }
+    function HelloWorld(){return <div>hello world,<MyName/></div>}
     function CarObject(){
         const car={model: "mazda", year:2017, color: "red", engine: 2500}
         return <div> {car.model}, {car.year}, {car.color}, {car.engine} </div>
     }
-    function MyName(){
-        const name="Segedu";
-        return <div>{name}</div>
-    }
-
+    function MyName(){const name="Segedu"; return <div>{name}</div>}
+    function Header(){return<header>this is the header</header> }
+    function Main(){return<main>this is the main</main>}
+    function Footer(){return<footer>this is the footer</footer>}
+    function ShowToWindow(){return <div><Header/><Main/><Footer/></div>}
+    function HelloWithName(props){return <h1>Hello {props.name} :)</h1>}
+   
     ReactDOM.render(
     <div>
      <HelloWorld/>
@@ -37,8 +37,21 @@
      <CarObject/>
      <CarObject/>
      <MyName/>
-    </div>
-    ,domElement)
+     <HelloWorld/>
+     <ShowToWindow/>
+     <HelloWithName name="Dani"/>
+     <HelloWithName name="Hana"/>
+     <HelloWithName name="Sara"/>
+     <HelloWithName name="David"/>
+     <HelloWithName name="Dana"/>
+     <HelloWithName name="Sharon"/>
+     <HelloWithName name="Dvir"/>
+     <HelloWithName name="Yakov"/>
+     <HelloWithName name="Dan"/>
+     <HelloWithName name="Roni"/>
+
+    </div>,domElement)
+
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.4.0/umd/react.development.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.4.0/umd/react-dom.development.js"></script>
