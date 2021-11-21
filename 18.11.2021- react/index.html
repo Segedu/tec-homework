@@ -10,25 +10,47 @@
     <main id="app"></main>
     <script type="text/babel">
     const domElement= document.getElementById("app");
-    function HelloWorld(){return <div>hello world</div>}//1
-    function CarObject(){const car={model: "mazda", year:2017, color: "red", engine: 2500};
-     return <div> {car.model}, {car.year}, {car.color}, {car.engine} </div>}//2
-    function MyName(){const name="Segedu"; return <div>{name}</div>}//3
-    function HelloWorld(){return <div>hello world,<MyName/></div>}//4
-    function Header(){return<header>this is the header</header> }
-    function Main(){return<main>this is the main</main>}
-    function Footer(){return<footer>this is the footer</footer>}
-    function ShowToWindow(){return <div><Header/><Main/><Footer/></div>}//5
-    function HelloWithName(props){return <h3>Hello {props.name} :)</h3>}//6
-    function GetAgeAndName(props){return <h3>{props.name} {props.age}</h3>}//7
-    function GetImage(props){return <img width="350" height="200" src={props.src}/>}//8
-    function GetVideo(props){return <video width="550" height="500" controls >
-    <source src={props.src} type="video/mp4"/></video>}//9
+
+    function HelloWorld(){
+        return( <div>hello world</div>)}//1
+
+    function CarObject(){
+        const car={model: "mazda", year:2017, color: "red", engine: 2500};
+     return( <div> {car.model}, {car.year}, {car.color}, {car.engine} </div>)}//2
+
+    function MyName(){
+        const name="Segedu"; return( <div>{name}</div>)}//3
+
+    function HelloWorld(){
+        return( <div>hello world,<MyName/></div>)}//4
+
+    function Header(){
+        return(<header>this is the header</header> )}
+
+    function Main(){
+        return(<main>this is the main</main>)}
+
+    function Footer(){
+        return(<footer>this is the footer</footer>)}
+
+    function ShowToWindow(){
+        return( <div><Header/><Main/><Footer/></div>)}//5
+
+    function HelloWithName(props){
+        return( <h3>Hello {props.name} :)</h3>)}//6
+
+    function GetAgeAndName(props){
+        return( <h3>{props.name} {props.age}</h3>)}//7
+
+    function GetImage(props){
+        return( <img width="350" height="200" src={props.src}/>)}//8
+
+    function GetVideo(props){
+        return( <video width="550" height="500" controls >
+    <source src={props.src} type="video/mp4"/></video>)}//9
+
     // props זו דרך להעברת מידע לקומפוננטה כמו ארגומנט שמועבר בתוך פונקציה
     // הוא מחליף את ה attribute  של התגיות html ע"י כך שמחזיק את הערך שלהם ומעביר לקומפננטה.
-
-
-
    
     ReactDOM.render(
     <div>
@@ -56,16 +78,16 @@
      <HelloWithName name="Yakov"/>
      <HelloWithName name="Dan"/>
      <HelloWithName name="Roni"/>
-     <GetAgeAndName name="Hana" age="85"/>
-     <GetAgeAndName name="Sara" age="46"/>
-     <GetAgeAndName name="Dana" age="57"/>
-     <GetAgeAndName name="Sharon" age="35"/>
-     <GetAgeAndName name="David" age="55"/>
-     <GetAgeAndName name="Dani" age="26"/>
-     <GetAgeAndName name="Dvir" age="27"/>
-     <GetAgeAndName name="Yakov" age="29"/>
-     <GetAgeAndName name="Dan" age="24"/>
-     <GetAgeAndName name="Roni" age="23"/>
+     <GetAgeAndName name="Hana" age={85}/>
+     <GetAgeAndName name="Sara" age={46}/>
+     <GetAgeAndName name="Dana" age={57}/>
+     <GetAgeAndName name="Ron" age={35}/>
+     <GetAgeAndName name="David" age={55}/>
+     <GetAgeAndName name="Dani" age={26}/>
+     <GetAgeAndName name="Dvir" age={27}/>
+     <GetAgeAndName name="Yakov" age={29}/>
+     <GetAgeAndName name="Dan" age={24}/>
+     <GetAgeAndName name="Roni" age={23}/>
      <GetImage src="https://images.pexels.com/photos/910307/pexels-photo-910307.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"/>
      <GetImage src="https://images.pexels.com/photos/158398/niagara-falls-waterfall-horseshoe-158398.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"/>
      <GetImage src="https://images.pexels.com/photos/1486974/pexels-photo-1486974.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"/>
