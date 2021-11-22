@@ -1,0 +1,26 @@
+*{
+    margin:1%;
+}
+.bakeryDiv{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+    width: 70%;
+    margin-left: 15%;
+}
+section{
+    width: 30%;
+}
+.bakeryDiv img{
+    margin-left: 5%;
+    width: 100px;
+    height: 100px;
+}
+p{
+    margin-left: 5%;
+    color: wheat;
+}
+H3{
+    margin-left: 5%;
+    color: wheat;
+}

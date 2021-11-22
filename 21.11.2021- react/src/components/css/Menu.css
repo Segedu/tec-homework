@@ -1,0 +1,24 @@
+.menuDiv{
+    display: flex;
+    background-color: #FFECCC;
+    justify-content:space-evenly;
+    width: 70%;
+    margin-left: 15%;
+}
+.menuDiv img{
+    width: 300px;
+    height: 250px;
+    margin-left: 20px;
+    border-radius: unset;
+}
+.menuDiv p{
+    color: #876128;
+    margin-left: 5%;
+}
+.menuDiv h3{
+    color: #876128;
+
+}
+section{
+    width: 30%;
+}
