@@ -1,9 +1,6 @@
-*{
-    margin:1%;
-}
-.bakeryDiv{
+.teamMember{
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-evenly;
     background-color: black;
     width: 80%;
     margin-left: 10%;
@@ -11,16 +8,15 @@
 section{
     width: 30%;
 }
-.bakeryDiv img{
+.teamMember img{
+    border-radius: unset;
     margin-left: 5%;
-    width: 100px;
-    height: 100px;
+    width: 280px;
+    height: 250px;
 }
 p{
     margin-left: 5%;
-    color: wheat;
 }
 H3{
     margin-left: 5%;
-    color: wheat;
 }

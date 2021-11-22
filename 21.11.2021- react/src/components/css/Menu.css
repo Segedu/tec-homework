@@ -2,23 +2,23 @@
     display: flex;
     background-color: #FFECCC;
     justify-content:space-evenly;
-    width: 70%;
-    margin-left: 15%;
+    width: 80%;
+    margin-left: 10%;
+}
+section{
+    width: 30%;
 }
 .menuDiv img{
-    width: 300px;
-    height: 250px;
-    margin-left: 20px;
     border-radius: unset;
+    width: 280px;
+    height: 250px;
+    margin-left: 5%;
 }
 .menuDiv p{
-    color: #876128;
     margin-left: 5%;
+    color: #876128;
 }
 .menuDiv h3{
     color: #876128;
 
-}
-section{
-    width: 30%;
 }
