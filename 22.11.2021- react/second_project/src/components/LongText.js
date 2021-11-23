@@ -2,9 +2,9 @@ import { Component } from "react";
 
 class LongText extends Component {
     render() {
-        let randColor = { color: "green" };
-        if (this.props.title.length > 5) {
-            randColor = { color: "red" }
+        let randColor = { color: "red" };
+        if (this.props.title.length > 8) {
+            randColor = { color: "green" }
         }
         return (
             <div>

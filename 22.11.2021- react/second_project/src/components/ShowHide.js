@@ -1,21 +1,26 @@
 import { Component } from "react";
 
-// class ShowHide extends Component {
-//     state = { deleteFunc: this.props.text }
+class ShowHide extends Component {
+    state = { style: "inline" }
 
-//     hide = () => {
-//         this.setState({ deleteFunc: this.state.deleteFunc })
-//         return deleteFunc = { display: "none" };
-//     }
+    hide = () => {
+        if (this.state.style === "none") {
+            this.setState({ style: "inline" })
+        }
+        else {
+            this.setState({ style: "none" })
+        }
+    }
 
-//     render() {
-//         return (
-//             <div>
-//                 <button onClick={this.hide}>click here</button>
-//                 <p style={deleteFunc}>{this.props.text}</p>
-//             </div >
-//         )
-//     }
-// }
+    render() {
+        return (
+            <div>
+                <button onClick={this.hide}>click here</button>
+                <p style={this.props.style}>{this.props.text}</p>
+            </div >
+        )
+    }
+}
+
 
 export default ShowHide;
