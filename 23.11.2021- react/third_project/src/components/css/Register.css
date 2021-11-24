@@ -1,0 +1,43 @@
+.Register{
+    position: relative;
+    background-image: url("https://cdn.pixabay.com/photo/2018/07/15/23/24/prague-3540890__340.jpg");
+    background-size: cover;
+    width: 45%;
+    margin: 5%;
+    margin-left: 25%;
+    border-radius: 10px;
+    box-shadow: 0px 20px 40px gray;
+    color: white;     
+}
+
+button{
+    background-color: #208E15;
+    border-radius: 10px;
+    width: 35%;
+    margin: 1%;
+    padding: 2%;
+      font-size: large;
+    
+}
+input{
+    border-radius: 5px;
+    margin: 1%;
+    padding: 2%;
+    border: none;
+    background: none;
+    border-bottom:2px solid white;
+    font-weight: bold;
+    font-size: medium;
+    color: white;
+
+}
+
+input::content{
+    font-size: medium;
+    color: white;
+
+}
+input::placeholder{
+    font-size: medium;
+    color: white;
+}
