@@ -14,9 +14,12 @@ class Posts extends Component {
                 body: JSON.stringify()
             })
             .then(response => response.json())
-            .then(data => { this.setState({ title: data.title, body: data.body }) })
-            // console.log(data))
-
+            .then(data =>
+                this.setState({
+                    data: data.map((post) => {
+                        return (post.data)
+                    }),
+                }))
             .catch(error => console.log(error));
     }
 
@@ -24,8 +27,7 @@ class Posts extends Component {
         return (
             <div className="Posts" >
                 <button onClick={this.getPosts} >get posts</button>
-                <p>{this.state.title}</p>
-                <p>{this.state.body}</p>
+                <p>{this.state.data}</p>
             </div>
         )
     }
