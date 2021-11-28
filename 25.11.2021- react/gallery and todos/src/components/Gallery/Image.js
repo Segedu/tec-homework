@@ -1,16 +1,13 @@
 import { Component } from "react";
-// import { MainBackground } from './Gallery';
 import './Gallery.module.css';
-// import * as style from './Gallery.module.css';
 
 class Image extends Component {
-    clickHandler = () => {
-        console.log("change background");
+    clickHandler = (i) => {
+        this.setState({ index: i })
     }
-
     render() {
         return (<section className="Image">
-            <img onClick={this.clickHandler} src={this.props.image.img} alt="" />
+            <img onClick={() => { this.clickHandler(i) }} src={this.props.src} alt="" />
         </section>)
     }
 }
