@@ -4,14 +4,16 @@ import YourName from './components/YourName';
 import Name from './components/Name';
 import ThreeCounters from './components/ThreeCounters';
 import Login from './components/Login';
+import Vacation from './components/Vacation';
 
 function App() {
   return (
     <div className="App">
-      <YourName />
-      <Name randName="Dan" />
-      <ThreeCounters />
-      <Login/>
+      {/* <YourName /> */}
+      {/* <Name randName="Dan" /> */}
+      {/* <ThreeCounters /> */}
+      {/* <Login /> */}
+      <Vacation />
     </div>
   )
 }

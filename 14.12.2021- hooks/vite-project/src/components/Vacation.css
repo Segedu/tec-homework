@@ -1,0 +1,29 @@
+.vacation{
+    background-color:steelblue;
+    margin: 2%;
+}
+input{
+    border-radius: 10px;
+    margin: 1%;
+    padding: 1%;
+    font-size: larger;
+}
+input::placeholder{
+    font-size: large;
+}
+ul{
+    text-align: left;
+}
+li{
+    font-size: larger;
+    font-weight: 500;
+    margin: 1%;
+    padding: 1%;
+    list-style: none;
+}
+button{
+    padding: 1%;
+    margin: 1%;
+    border-radius: 10px;
+    border: none;
+}
