@@ -29,9 +29,12 @@ class Books extends Component {
                         <tr key={index}>
                             <td >{book.author}</td>
                             <td>{book.title}</td>
-                            <td><button onClick={() => {
-                                this.setState({ redirectToDetails: true })
-                            }}>Details</button>
+                            <td>
+                                <button onClick={() => {
+                                    this.props.setCurrentBook(book.author, book.title);
+                                    this.setState({ redirectToDetails: true })
+                                }}
+                                >Details</button>
                             </td>
                         </tr>
                     ))}
