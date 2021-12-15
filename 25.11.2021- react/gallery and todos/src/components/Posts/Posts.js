@@ -17,7 +17,7 @@ class Posts extends Component {
             .then(data =>
                 this.setState({
                     data: data.map((post) => {
-                        return (post.data)
+                        return <h1>{post.title}</h1>
                     }),
                 }))
             .catch(error => console.log(error));
