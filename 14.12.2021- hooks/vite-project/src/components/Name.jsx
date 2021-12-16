@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-const Name = ({randName}) => {
-    const [name, setName] = useState(randName)
-    const style = { color: name ? "red" : "green" }
+const Name = ({ randColor }) => {
+    const [color, setColor] = useState(randColor)
+    const style = { color: color ? "red" : "green" }
 
     return (
-        < p style={style} onClick={()=>setName(!name)}>
-            
-            {randName}
+        < p style={style} onClick={() => setColor(!color)}>
+
+            {randColor}
         </p>
     )
 }
