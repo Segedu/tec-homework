@@ -12,7 +12,7 @@ function App() {
       {/* <YourName /> */}
       <Name randColor="Dan" />
       {/* <ThreeCounters /> */}
-      {/* <Login /> */}
+      <Login />
       <Vacation />
     </div>
   )
