@@ -12,6 +12,7 @@ function App() {
       <form onSubmit={(e) => {
         e.preventDefault()
         setTitle(e.target[0].value);
+        e.target[0].value = "";
       }}>
         <input type="text" />
         <input type="submit" value="send" />
