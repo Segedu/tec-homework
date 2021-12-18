@@ -1,14 +1,24 @@
-import { useState } from 'react'
-import logo from './logo.svg'
+import { useEffect, useState } from 'react'
 import './App.css';
 import Reddit from './components/Reddit';
+import RedditJavaScript from './components/RedditJavaScript'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [title, setTitle] = useState("java")
 
   return (
     <div className="App">
-     <Reddit/>
+
+      <form onSubmit={(e) => {
+        e.preventDefault()
+        setTitle(e.target[0].value);
+      }}>
+        <input type="text" />
+        <input type="submit" value="send" />
+      </form>
+
+      {/* <Reddit /> */}
+      <RedditJavaScript jsPostsTitle={title} />
     </div>
   )
 }
