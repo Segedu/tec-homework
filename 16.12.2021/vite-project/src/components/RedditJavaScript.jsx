@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 
 const RedditJavaScript = ({ jsPostsTitle }) => {
     const [posts, setPosts] = useState([]);
+    useEffect(getJsPosts, [jsPostsTitle]);
 
-    const getJsPosts = () => {
+    function getJsPosts() {
         fetch(`https://www.reddit.com/r/${jsPostsTitle}.json`)
             .then(response => response.json())
             .then(response => {
@@ -12,7 +13,6 @@ const RedditJavaScript = ({ jsPostsTitle }) => {
             })
     }
 
-    useEffect(getJsPosts);
 
     const elements = posts.map((post, i) => {
         return <li key={i}>{post.data.title}</li>
