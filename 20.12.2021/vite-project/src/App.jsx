@@ -6,11 +6,11 @@ import SetDateOnTitle from './components/SetDateOnTitle';
 
 
 function App() {
-  const [input, setInput] = useState(0);
+  const [initialCount, setInitialCount] = useState(0);
   return (
     <div className="App">
-      <input onChange={(e) => { setInput(Number(e.target.value)) }} />
-      <Counter input={input} />
+      <initialCount onChange={(e) => { setInitialCount(Number(e.target.value)) }} />
+      <Counter initialCount={initialCount} />
       <SetDateOnTitle />
     </div>
   )

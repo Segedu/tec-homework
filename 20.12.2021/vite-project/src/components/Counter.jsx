@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 
-const Counter = ({ input }) => {
-    const [counter, setCounter] = useState(input);
+const Counter = ({ initialCount }) => {
+    const [counter, setCounter] = useState(initialCount);
 
     useEffect(() => {
-        setCounter(input)
-    }, [input])
+        setCounter(initialCount)
+    }, [initialCount])
 
     return (
         <div>
