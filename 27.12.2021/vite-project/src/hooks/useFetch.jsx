@@ -1,11 +1,11 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 const useFetch = (url) => {
     const [data, setData] = useState([]);
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
 
-    useEffect(getData, [])
+    useEffect(getData, [url])
 
     function getData() {
         fetch(url)
