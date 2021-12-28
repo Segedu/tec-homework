@@ -1,9 +1,10 @@
 import { useState, useMemo } from "react";
 import Child from "./Child";
+
 const PerformanceProblem = () => {
     const [flag, setFlag] = useState(false);
     let num = 2;
-   
+
     expensiveCalculation(num);
     const memo = useMemo(isNumChanged, [num])
 
