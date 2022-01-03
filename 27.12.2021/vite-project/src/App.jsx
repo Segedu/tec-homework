@@ -9,9 +9,9 @@ function App() {
   const element = data.map((obj,) => <p key={obj.id}>{obj.title}</p>);
   return (
     <div className="App">
-      {/* {isLoading ? <Spinner /> : element}
-      {error ? <p style={{ color: "red" }} > error</p> : ""} */}
-      <PerformanceProblem />
+      {isLoading ? <Spinner /> : element}
+      {error ? <p style={{ color: "red" }} > error</p> : ""}
+      {/* <PerformanceProblem /> */}
     </div >
   )
 }
