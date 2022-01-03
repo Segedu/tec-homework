@@ -21,8 +21,7 @@ function App() {
     const sign_in_or_up = (sign === 'signup') ? 'signUp' : 'verifyPassword';
 
     const URL = urlBase + sign_in_or_up + '?key=' + API_KEY;
-
-
+    
     const objData = {
       email,
       password,
