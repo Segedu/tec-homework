@@ -12,7 +12,7 @@ function App() {
 
   let arSign = ['signin', 'signup'];
 
-  function sign() {
+  function signF() {
     // const URL = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${API_KEY}`
     // signup: "https://identitytoolkit.googleapis.com/v1/accounts:signUp"
     //signin : https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=[API_KEY]; 
